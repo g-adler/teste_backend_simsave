@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Company;
+use App\Employee;
 
 class CompanyController extends Controller
 {
@@ -15,7 +16,9 @@ class CompanyController extends Controller
 
     public function getCompany(Request $request)
     {
-    	return Company::findOrFail($request->id);
+        $company = Company::findOrFail($request->id);
+        $company->employees;
+    	return $company;
     }
 
     public function createCompany(Request $request)
@@ -36,7 +39,7 @@ class CompanyController extends Controller
 
     public function deleteCompany(Request $request)
     {
-    	Company::findOrFail($request->id)->delete();
+        Company::findOrFail($request->id)->delete();
     }
 
 }

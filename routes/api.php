@@ -19,7 +19,10 @@ Route::group(['prefix' => 'company/'], function ($router) {
 	$router->post('/','CompanyController@createCompany');
 	$router->get('/{id}','CompanyController@getCompany');
 	$router->post('/{id}','CompanyController@editCompany');
+	$router->post('/{id}/employees/','EmployeeController@createEmployee');
+	$router->post('/{id}/employees/{idEmployee}','EmployeeController@editEmployee');
 	$router->delete('/{id}','CompanyController@deleteCompany');
+	$router->delete('/{id}/employees/{idEmployee}','EmployeeController@deleteEmployee');
 
 });
 

@@ -13,7 +13,7 @@ class Company extends Model
         'name', 'cnpj', 'address',
     ];
     
-    public function workers(){
-        return $this->hasMany(Worker::class);
+    public function employees(){
+        return $this->hasMany(Employee::class);
     }
 }
